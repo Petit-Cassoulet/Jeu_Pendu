@@ -9,6 +9,22 @@
 
 using namespace std;
 
+string choix_mot(vector<string> mot){
+	string chaine;
+	int v1 = rand() % mot.size();  
+		int choix = 0;
+		for (auto i = mot.begin(); i != mot.end(); ++i){
+			if(choix == v1){
+				chaine = *i; 
+			};
+			choix++;
+		};
+	
+	return chaine;
+
+};
+
+
 int main(){
 	string chaine;
 	srand (time(NULL));
@@ -30,22 +46,16 @@ int main(){
 		}
 	
 	while(1){
-		int v1 = rand() % mot.size();  
-		int choix = 0;
-		for (auto i = mot.begin(); i != mot.end(); ++i){
-			if(choix == v1){
-				chaine = *i; 
-			};
-			choix++;
-		};
+		
+		chaine = choix_mot(mot);
 
 		unsigned int tentative = 0;
 
 		cout << "-----------------------------	\n" 
-			"				\n"
-			"	Le jeu du pendu. 	\n"	
-		 	"		 		\n"	
-		 	"----------------------------- 	\n" << endl;
+				"	   							                  \n"
+				"	   Le jeu du pendu.			          \n"	
+				"								                    \n"	
+				"-----------------------------	    \n" << endl;
 			
 		
 		for(int i = 0; i < chaine.length(); i++){
@@ -87,10 +97,10 @@ int main(){
 		};
 	int Choix_User;
 	cout << "-----------------------------	\n" 
-		"	Nouvelle partie ?	\n"	
-		"	      1 = OUI		\n"	
-		"	      0 = NON		\n"	
-		"-----------------------------	\n" << endl;
+			"	   Nouvelle partie ?		\n"	
+			"				1 = OUI			\n"	
+			"				0 = NON			\n"	
+			"-----------------------------	\n" << endl;
 	cout << "> ";
 	cin >> Choix_User;
 	if(Choix_User == 1){
